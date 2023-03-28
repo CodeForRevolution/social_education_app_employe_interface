@@ -1,0 +1,30 @@
+<p><%=Student.name%></p>
+<%for(let student of Student){%>
+   <ul>
+    <li class="bg-danger"><%=student.name%></li>
+<form action="/student/allocateInterview" method="post">
+    <input type="text" name="interivew_id" id="">
+    <input type="hidden" name="student_id" value="<%= student._id%>" id="">
+<button type="submit">submit</button>
+</form>
+
+    <%for(let i=0;i<student.interview.length;i++){%>
+
+    <ul class="bg-primary border">
+        <%if(student.interview[i].document){%>
+        <li><%=student.interview[i].document.name%></li>
+        <li><%=student.interview[i].document.createdAt%></li>
+        <%}%>
+        <li><%=student.interview[i].value%></li>
+
+    </ul>
+      
+     
+
+       
+   <%}%>
+   </ul>               
+
+   <%}%> 
+    
+   

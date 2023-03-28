@@ -1,0 +1,35 @@
+<h1>this is from partial</h1>
+
+<%for(let interview of Interview){%>
+    <ul class="container bg-primary border">
+        
+      
+      <li>COMPANY NAME: <%=interview.name%></li> 
+      <li>ROLE OF EMPLOYE: <%=interview.position%></li> 
+      <li>SKILLS REQUIRE: <%=interview.skill%></li> 
+      <li>JOB POSTED: <%=interview.createdAt%></li> 
+      <li>INTERVEIW_ID: <%=interview._id%></li>
+
+     <%for(let student of interview.student){%>
+      <li class="bg-danger border"><%=student.name%>
+
+        <form action="/student/result" method="post">
+          <input type="hidden" name="student_id" value="<%=student._id%>">
+          <input type="hidden" name="interivew_id" value="<%=interview._id%>">
+          <select name="value" id="" required>
+           <option value="value" hidden>RESULT</option>
+           <option value="pass">pass</option>
+           <option value="fail">fail</option>
+           <option value="onHold">onHold</option>
+           <option value="Didn’t Attempt">Didn't Attempt</option>
+          </select>
+          <button type="submit">submit </button>
+           </form>
+      
+      </li>
+    
+
+        <%}%>
+        
+    </ul>
+    <%}%>

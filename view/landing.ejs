@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="css/landing.css">
+
+
+
+<div class="container border">
+
+
+    <div class="singup border-2">
+        <h1>SIGN-UP SECTION</h1>
+        <form action="/employe/create" method="post">
+            <input type="text" class="inputform" name="name" placeholder="name">
+            <input type="text" class="inputform" name="email" placeholder="email">
+            <input type="text" class="inuptform" name="password" placeholder="passowrd">
+            <input type="text" class="inuptform" name="confirmpassword" placeholder="confirmpassword">
+            <input type="submit" class="inuptform">
+        </form>
+    </div>
+
+    <div class="login border-2">
+        <h1>LOGIN SECTION</h1>
+        <%- include('_login.ejs'); %>
+    </div>
+
+
+</div>

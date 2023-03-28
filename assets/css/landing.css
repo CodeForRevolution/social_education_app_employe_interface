@@ -1,0 +1,24 @@
+
+
+.inputfrom{
+    width: 100%;
+    margin: 2px;
+    border: 1px solid #000000;
+   
+}
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.singup{
+ 
+   margin:3px;
+}
+
+.login{
+    margin: 2px;
+}
+.active{
+  display: none;
+}
