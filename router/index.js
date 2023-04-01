@@ -9,4 +9,5 @@ route.get('/wrong',homecontroller.wrong);
 route.use('/employe',require('./employe'));
 route.use('/student',require('./student'));
 route.use('/interview',require('./interview'));
+route.get('/singup',homecontroller.singup_page);
 module.exports=route;

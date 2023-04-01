@@ -7,5 +7,5 @@ route.post('/create',employe_controller.create);
 route.post('/login',passport.authenticate(
   'local',
   {failureRedirect:'/wrong'}  
-),homeController.home);
+),homeController.homepage);
 module.exports=route

@@ -5,4 +5,5 @@ route.post('/newstudent',student_controller.newstudent)
 route.get('/create',student_controller.studentform);
 route.post('/allocateInterview',student_controller.alocateInterveiw);
 route.post('/result',student_controller.result);
+route.get('/studentList',student_controller.studentList);
 module.exports=route;

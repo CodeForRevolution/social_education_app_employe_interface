@@ -1,0 +1,53 @@
+<link rel="stylesheet" href="/css/interviewList.css">
+
+<div class="page">
+
+    <div class="header">
+        <form action="">
+            <div class="menu">
+                <div class="logo" id="create_logo">
+                    <i class="fa-solid fa-user-plus"></i>
+                </div>
+            </div>
+            <div class="menu">
+                <input type="text" name="name" id="" placeholder="Company Name">
+            </div>
+            <div class="menu">
+                <select name="status" id="">
+                    <option value="">search-by-Post</option>
+                    <%for(let interview of Interview) {%>
+
+                        <option value="<%=interview.position%>">
+                            <%=interview.position%>
+                        </option>
+
+                        <%}%>
+                </select>
+            </div>
+            <div class="menu">
+               <input type="date" name="date" id="">
+            </div>
+            <!-- <div class="menu">
+                <select name="status" id="">
+                    <option value="">Allocated Interviews</option>
+                    <%for(let interview of Interview) {%>
+
+                        <option value="<%=interview._id%>">
+                            <%=interview.name%>
+                        </option>
+
+                        <%}%>
+                </select>
+            </div> -->
+            <div class="menu">
+                <button type="submit">SEARCH</button>
+            </div>
+        </form>
+    </div>
+
+
+
+</div>
+
+
+

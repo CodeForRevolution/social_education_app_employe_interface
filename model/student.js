@@ -23,6 +23,9 @@ const studenteSchema=new mongoose.Schema({
   WEBDEV:{
     type:String
   },
+  total:{
+    type:String
+  },
   dsa:{
     type:String
   },

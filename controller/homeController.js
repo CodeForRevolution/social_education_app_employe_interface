@@ -8,6 +8,14 @@ const {Parser}=require('json2csv');
 const student_csv = require('../model/student_csv');
 
 
+module.exports.singup_page=function(req,res){
+  res.render('singup.ejs');
+}
+
+module.exports.homepage=function(req,res){
+  res.redirect('/home');
+}
+
 module.exports.home= async function(req,res){
 
 
@@ -68,20 +76,10 @@ if(student_.interview.length==0){
   })
 }
 
-
- 
-
-
 }
 
 
-console.log('getging info',info);
-// let studentcsv=await student_csv.find({});
-
-
-// console.log('student csv file is',studentcsv)
-
-  
+console.log('getging info',info); 
 const obj=new Parser();
 const csv=obj.parse(info);
 console.log('you got the csv data',csv);
@@ -91,14 +89,6 @@ fs.writeFile(`${Date.now()}.csv`,csv,function(err){
   }
   console.log('file is save');
 })
-
-
-
-
-
-
-
-
 
     res.render('home',{
       Student:student,

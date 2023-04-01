@@ -3,17 +3,33 @@ const Interview = require('../model/interview');
 const Student =require('../model/student');
 module.exports.newstudent= async function(req,res){
  let student= await   Student.create(req.body);
-//  student.interview.push({
-//     value:'shakir',
-//     document:'641e9c70065a5fd77813bb67'
-//  });
-//  student.save();
+ console.log('chekcing typ of',typeof( parseInt(student.dsa, 10)));
+student.total= parseInt(student.dsa, 10)+ parseInt(student.react, 10)+ parseInt(student.WEBDEV, 10);
+student.save();
    console.log(req.body);
    res.redirect('back')
 }
 module.exports.studentform= async function(req,res){
     console.log('you hit the form again');
     res.render('create_student.ejs');
+}
+
+module.exports.studentList=async function(req,res){
+
+    let interview=await Interview.find({}).populate('student');
+  
+    let student=await Student.find({}).populate({
+      path:'interview',
+      populate:{
+        path:'document'
+      },
+   
+      
+    })
+    res.render('studentList.ejs',{
+        Student:student,
+        Interview:interview
+          });
 }
 
 module.exports.alocateInterveiw= async function(req,res){

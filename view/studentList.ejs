@@ -1,0 +1,313 @@
+<link rel="stylesheet" href="/css/studentList.css">
+
+<div class="page">
+
+
+
+    <div class="header">
+
+        <form action="">
+            <div class="menu">
+                <div class="logo" id="create_logo">
+                    <i class="fa-solid fa-user-plus"></i>
+                </div>
+            </div>
+            <div class="menu">
+                <input type="text" name="name" id="" placeholder="Student Name">
+            </div>
+            <div class="menu">
+                <select name="status" id="">
+                    <option value="">Interview-status</option>
+                    <option value="placed">Placed</option>
+                    <option value="placed">Not-placed</option>
+                </select>
+            </div>
+            <div class="menu">
+                <select name="batch" id="">
+                    <option value=""> Batch</option>
+                    <option value="march-2020">march-2020</option>
+                    <option value="march-2020">Aug-2020</option>
+                    <option value="march-2020">march-2021</option>
+                    <option value="march-2020">Aug-2020</option>
+                            </select>
+            </div>
+            <div class="menu">
+                <select name="status" id="">
+                    <option value="">Allocated Interviews</option>
+                    <%for(let interview of Interview) {%>
+
+                        <option value="<%=interview._id%>">
+                            <%=interview.name%>
+                        </option>
+
+                        <%}%>
+                </select>
+            </div>
+            <div class="menu">
+                <button type="submit">SEARCH</button>
+            </div>
+        </form>
+    </div>
+
+
+
+
+    <div class="studentList">
+        <%for(let student of Student) {%>
+            <div class="student" id="<%=student._id%>">
+                <div class="studentLess">
+
+                    <ul>
+                        <li class="student_logo" id="student_logo"><i class="fa-solid fa-user-graduate"></i></li>
+                        <li><%=student.name%>
+                        </li>
+                        <li>College:<%=student.college%>
+                        </li>
+                        <li>Status:<%=student.status%>
+                        </li>
+                        <li>Batch:<%=student.batch%>
+                        </li>
+                        <li>Total-marks:<%=student.total%>
+                        </li>
+                        <li id="more_info_drop"><a class="more_info_drop" href="<%=student._id%>"><i
+                                    class="fa-solid fa-retweet"></i></a></li>
+                    </ul>
+
+                </div>
+                <div class="studentMore">
+
+                    <div class="student_more_score">
+                        <h4>student Score</h4>
+                        <ul>
+                            <li>DSA:<%=student.dsa%>
+                            </li>
+                            <li>WebDev:<%=student.WEBDEV%>
+                            </li>
+                            <li>React:<%=student.react%>
+                            </li>
+                        </ul>
+                    </div>
+
+
+
+                    <div class="student_more_given-interview">
+                        <h4>Interview Given</h4>
+                        <ul>
+                            <%for(let i=0;i<student.interview.length;i++){%>
+                                <li>
+                                    <span>Name:<%=student.interview[i].document.name%></span>
+                                    <span class="Result_interview">Result:<%=student.interview[i].value%></span>
+                                    <span class="date_interview">Date:04/05/2020</span>
+                                </li>
+                                <%}%>
+                        </ul>
+                    </div>
+
+
+
+
+                    <div class="student_more_interview">
+                        <h4>Interview upcoming</h4>
+                        <ul>
+                            <form action="/student/allocateInterview" method="post">
+                                <input type="hidden" name="student_id" value="<%=student._id%>">
+                                <select name="interivew_id" id="">
+                                    <option value="">Allocate Interviews to student</option>
+                                    <%for(let interview of Interview) {%>
+                
+                                        <option value="<%=interview._id%>">
+                                            <%=interview.name%>
+                                        </option>
+                
+                                        <%}%>
+                                </select>
+                                <button type="submit">Allocate</button>
+                            </form>
+                        </ul>
+                    </div>
+                </div>
+
+
+
+            </div>
+            <%}%>
+
+
+
+    </div>
+
+
+
+</div>
+
+
+
+
+
+<div class="student_create" id="student_create">
+
+    <div class="student_form_row1">
+        <i class="fa-solid fa-user-plus"></i>
+<h3  class="exit" id="exit">X</h3>
+    </div>
+  
+   
+
+
+    <form action="/student/newstudent" method="post">
+    <div class="student_form_fields">
+        Name:
+        <input type="text" name="name" id="" required>
+    </div>
+
+    <div class="student_form_fields">
+        Email:
+     <input type="text" name="email" id="" required>  
+    </div>
+
+    <div class="student_form_fields">
+        College:
+        <input type="text" name="college" id=""  required>
+    </div>
+
+    <div class="student_form_fields">
+        DSA_Score
+        <input type="text" name="dsa" id="" required>
+    </div>
+
+    <div class="student_form_fields">
+        WEB-DEV:
+        <input type="text" name="WEBDEV" id="" required>
+    </div>
+
+    <div class="student_form_fields">
+        React-Score
+        <input type="text" name="react" id=""  required>
+    </div>
+
+    <div class="student_form_fields">
+        <select name="batch" id="">
+<option value="">Enter Batch</option>
+<option value="march-2020">march-2020</option>
+<option value="march-2020">Aug-2020</option>
+<option value="march-2020">march-2021</option>
+<option value="march-2020">Aug-2020</option>
+        </select>
+      
+    </div>
+    <button class="btn btn-danger btn-sm border">submit</button>
+   
+</form>
+
+</div>
+
+
+
+
+<script src="/js/studentList.js"></script>
+
+
+<!--     
+    <div class="main">
+
+        <div class="header">
+        
+            +++++
+        </div>
+    </div>
+
+
+
+
+<div> -->
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+
+    <div class="containerSt">
+        <%for(let student of Student) {%>
+            <%if(student.name=='muskan ansari'){%>
+                <div class="main main_moreinfo" id="<%=student._id%>">
+                    <%}else{%>
+                        <div class="main" id="<%=student._id%>">
+                            <%}%>
+                                <ul>
+                                    <li class="student_logo">l</li>
+                                    <li>Name:<%=student.name%>
+                                    </li>
+                                    <li>College:<%=student.college%>
+                                    </li>
+                                    <li>Status:<%=student.status%>
+                                    </li>
+                                    <li>Total-Score:<%=student.total%>
+                                    </li>
+                                    <li><a class="moreinfo" href="<%=student._id%>"></a></li>
+                                </ul>
+                        </div>
+                </div>
+                <%}%>
+    </div>
+
+</div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+   <p><%=Student.name%></p>
+<%for(let student of Student){%>
+   <ul>
+    <li class="bg-danger"><%=student.name%></li>
+<form action="/student/allocateInterview" method="post">
+    <input type="text" name="interivew_id" id="">
+    <input type="hidden" name="student_id" value="<%= student._id%>" id="">
+<button type="submit">submit</button>
+</form>
+
+    <%for(let i=0;i<student.interview.length;i++){%>
+
+    <ul class="bg-primary border">
+        <%if(student.interview[i].document){%>
+        <li><%=student.interview[i].document.name%></li>
+        <li><%=student.interview[i].document.createdAt%></li>
+        <%}%>
+        <li><%=student.interview[i].value%></li>
+
+    </ul>
+      
+     
+
+       
+   <%}%>
+   </ul>               
+
+   <%}%> 
+     -->

@@ -1,0 +1,334 @@
+*{
+    box-sizing: border-box;
+} 
+button{
+    background-color:  #ffe6ff;
+    color: black;
+}
+
+.page{
+    background-color: orange;
+    height: auto;
+    overflow: hidden;
+     display: flex;
+     flex-direction: column;
+}
+
+
+/* creating header */
+.header{
+    display: flex;
+    width: 100%;
+    height: 70px;
+    flex-direction: row;
+    background-color: whitesmoke;
+    margin-top: 0px;
+    
+}
+.studentMore ul{
+    display: flex;
+    justify-content:space-evenly;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+}
+.studentMore li{
+
+    width: 20%;
+    margin: 0;
+    padding: 0;
+   
+}
+
+.header form{
+    display: flex;
+    flex: row;
+    width: 100%;
+    justify-content: flex-start;
+    justify-content: space-between;
+}
+.menu{
+    width: 15%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+form input{
+border-radius: 25px;
+
+}
+.header i{
+    width: 50%;
+    height: 50%;
+    font-size: 45px;
+    border-radius: 50%;
+}
+
+form select{
+    border-radius: 25px;
+    width: 100%;
+    text-align: center;
+    height: 30px;
+    outline: 1px;
+}
+form button{
+    width: 100%;
+    height: 30px;
+border-radius: 25px;
+align-self: flex-start;
+}
+.logo{
+    border-radius: 50%;
+    width: 45%;
+    height:90%;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+   justify-content: center;
+   align-items: center;
+   padding-bottom: 30px;
+   cursor: pointer;
+}
+
+/* working on student list */
+
+
+.studentList{
+    background-color:rgb(125, 141, 138);
+ width: 100%;
+ display: flex;
+ flex-direction: column;
+ justify-content: flex-start;
+ margin-top: 5px;
+
+}
+.student{
+    display: flex;
+     background-color: white;
+    margin-bottom: 0px ;
+    justify-content: flex-start;
+    width:100%;
+    flex-direction: column;
+    height:35px;
+    border-bottom: 1px solid black;
+    padding-top: 2px;
+    padding-bottom: 2px;
+  transition: all 1s ease-in-out;
+   
+}
+
+
+.activeStudent{
+    transition: height 1s ease-in-out;
+    transition-duration: 1s;
+    height: auto;
+    background-color: #f2f2f2;
+
+ 
+}
+/* working on student less */
+.studentLess{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-top: 5px;
+    justify-content: space-between;
+    font-size:17px;
+   
+}
+.studentLess ul{
+    width: 100%;
+    display: flex;
+    
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+}
+.studentLess li{
+    width: 22%;
+    margin: 0;
+    padding: 0;
+    margin-left: 2px;
+   
+}
+#more_info_drop{
+    width: 5%;
+    margin-left: auto;
+}
+
+#student_logo{
+    width:5%;
+    margin-bottom: 5px;
+
+}
+.more_info_drop {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.student_logo i{
+    font-size: 30px;
+}
+
+/* working on student more score */
+
+.studentMore{
+ 
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 5px;
+    justify-content: baseline;
+   
+}
+.student_more_score{
+  display: flex;
+  flex-direction: column;
+  width: 12%;
+  align-items: center;
+
+}
+
+.student_more_score ul{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+} 
+
+.student_more_score ul li{
+    width: 100%;
+}
+
+/* working on student interview-given */
+.student_more_given-interview{
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    align-items: center;
+  }
+  
+  .student_more_given-interview ul{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+  } 
+  
+  .student_more_given-interview ul li{
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+  }
+  .student_more_given-interview span{
+
+display: inline-block;
+width:50%;
+margin-left: 1px;
+  }
+
+  .student_more_given-interview .Result_interview {
+width: 30%;
+  }
+  
+  .student_more_given-interview .date_interview {
+width: 25%;
+  }
+  
+/* working on student interview list available  */
+
+.student_more_interview{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    
+    align-items: center;
+  }
+  
+  .student_more_interview ul{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+  } 
+  
+  .student_more_interview ul li{
+      width: 100%;
+  }
+  
+.student_more_interview button{
+
+    width: 50%;
+    display: flex;
+    align-self: center;
+    display: block;
+    margin-top: 10px;
+}
+.student_more_interview  form{
+    display: flex;
+    flex-direction: column;
+}
+
+/* creating student form 0 */
+.student_create{
+    transition:all ease-in-out;
+    display: none;
+}
+
+.nonActive{
+    height: 60vh;
+    width: 30vw;
+    background-color:  #bfbfbf;
+    position: fixed;
+    top:50px;
+    right: 35vw;
+    flex-direction: column;
+    border-radius: 25px;
+    display: block;
+    transition:all ease-in-out;
+}
+.student_form_row1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 25px;
+
+}
+.student_form_row1 i{
+    font-size: 40px;
+    padding-left: 20px;
+    padding-top: 20px;
+
+}
+
+.exit{
+ padding-right: 10px;
+ color: red;
+cursor: pointer;
+}
+.student_create form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+
+}
+.student_form_fields{
+    display: flex;
+    flex-direction:row;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+
+.student_create button{
+    margin-top: 20px;
+    border-radius: 25px;
+    background-color:     #ff99ff;
+    color: black;
+}
