@@ -1,9 +1,19 @@
 
 <link rel="stylesheet" href="/css/header.css">
-<header><ul>
-    <li><a href="">HOME</a></li>
-    <li><a href="/student/studentList">STUDENT_LIST</a></li>
-    <li><a href="">STUDENT-CVS</a></li>
-    <li><a href="/interview/interviewList">INTERVIEW_LIST</a></li>
+<header><ul id="nav">
+    <li id="home" class=""><a href="/home">HOME</a></li>
+    <li id="studentList" id=""><a href="/student/studentList">STUDENT_LIST</a></li>
+    <li id="studentcsv" id=""><a href="/student/studentCsv">STUDENT-CVS</a></li>
+    <li id="interviewList" id=""><a href="/interview/interviewList">INTERVIEW_LIST</a></li>
+    <%if(locals.employe){%>
+        <li id="more_menu" class=""><i  class="fa-solid fa-circle-chevron-down more_menu_i"></i>
+            <div id="slidedown" class="slidedown">
+          <h5 id="username_slidedown"><%=locals.employe.name%></h5>  
+               <a id="logout_slidedown" href="/employe/logout">LOG-OUT</a>
+            </div>
+        </li>
+
+        <%}%>
+   
 </ul>
 </header>

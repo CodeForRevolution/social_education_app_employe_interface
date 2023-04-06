@@ -4,6 +4,7 @@ const employe_controller=require('../controller/employe_controller')
 const homeController=require('../controller/homeController')
 const route=express.Router();
 route.post('/create',employe_controller.create);
+route.get('/logout',employe_controller.logout);
 route.post('/login',passport.authenticate(
   'local',
   {failureRedirect:'/wrong'}  

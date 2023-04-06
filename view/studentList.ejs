@@ -1,38 +1,35 @@
 <link rel="stylesheet" href="/css/studentList.css">
 
 <div class="page">
-
-
-
+    
     <div class="header">
-
-        <form action="">
+        <form action="" method="">
             <div class="menu">
                 <div class="logo" id="create_logo">
                     <i class="fa-solid fa-user-plus"></i>
                 </div>
             </div>
             <div class="menu">
-                <input type="text" name="name" id="" placeholder="Student Name">
+                <input type="text" name="name" id="" placeholder="student Name">
             </div>
             <div class="menu">
                 <select name="status" id="">
                     <option value="">Interview-status</option>
                     <option value="placed">Placed</option>
-                    <option value="placed">Not-placed</option>
+                    <option value="not-placed">not-placed</option>
                 </select>
             </div>
             <div class="menu">
                 <select name="batch" id="">
-                    <option value=""> Batch</option>
+                    <option value="">Enter Batch</option>
                     <option value="march-2020">march-2020</option>
-                    <option value="march-2020">Aug-2020</option>
-                    <option value="march-2020">march-2021</option>
-                    <option value="march-2020">Aug-2020</option>
+                    <option value="Aug-2020">Aug-2020</option>
+                    <option value="march-2021">march-2021</option>
+                    <option value="Aug-2020">Aug-2020</option>
                             </select>
             </div>
             <div class="menu">
-                <select name="status" id="">
+                <select name="Alocated" id="">
                     <option value="">Allocated Interviews</option>
                     <%for(let interview of Interview) {%>
 
@@ -50,8 +47,6 @@
     </div>
 
 
-
-
     <div class="studentList">
         <%for(let student of Student) {%>
             <div class="student" id="<%=student._id%>">
@@ -59,7 +54,7 @@
 
                     <ul>
                         <li class="student_logo" id="student_logo"><i class="fa-solid fa-user-graduate"></i></li>
-                        <li><%=student.name%>
+                        <li><%=student.name.replace('""',"")%>
                         </li>
                         <li>College:<%=student.college%>
                         </li>
@@ -69,8 +64,7 @@
                         </li>
                         <li>Total-marks:<%=student.total%>
                         </li>
-                        <li id="more_info_drop"><a class="more_info_drop" href="<%=student._id%>"><i
-                                    class="fa-solid fa-retweet"></i></a></li>
+                        <li id="more_info_drop"><a class="more_info_drop" href="<%=student._id%>"><i class="fa-solid fa-caret-down"></i></a></li>
                     </ul>
 
                 </div>
@@ -144,6 +138,9 @@
 
 
 
+
+
+
 <div class="student_create" id="student_create">
 
     <div class="student_form_row1">
@@ -189,9 +186,9 @@
         <select name="batch" id="">
 <option value="">Enter Batch</option>
 <option value="march-2020">march-2020</option>
-<option value="march-2020">Aug-2020</option>
-<option value="march-2020">march-2021</option>
-<option value="march-2020">Aug-2020</option>
+<option value="Aug-2020">Aug-2020</option>
+<option value="march-2021">march-2021</option>
+<option value="Aug-2020">Aug-2020</option>
         </select>
       
     </div>

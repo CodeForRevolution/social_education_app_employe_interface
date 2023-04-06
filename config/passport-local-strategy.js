@@ -51,10 +51,11 @@ passport.deserializeUser( async function(id,done){
 })
 
 passport.checkAuthentication=function(req,res,next){
+    console.log('checking authentication');
     if(req.isAuthenticated()){
         return next();
     }else{
-    return    res.redirect('/wrong');
+    return    res.redirect('/');
     }
    
 }

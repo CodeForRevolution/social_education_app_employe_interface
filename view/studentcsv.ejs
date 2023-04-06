@@ -1,0 +1,111 @@
+<link rel="stylesheet" href="/css/studentcsv.css">
+
+
+<div class="page">
+
+
+
+  <div class="header">
+
+    <form action="" method="">
+      <div class="menu  ">
+        <div class="logo " id="create_logo">
+        <a  href="/student/downwloadcsv">  <i class="fa-solid fa-file-csv"></i>
+          <span>Download</span>
+        </a>
+
+        </div>
+      </div>
+      <div class="menu">
+        <input type="text" name="name" id="" placeholder="student Name">
+      </div>
+      <div class="menu">
+        <select name="status" id="">
+          <option value="">Interview-status</option>
+          <option value="placed">Placed</option>
+          <option value="not-placed">not-placed</option>
+        </select>
+      </div>
+      <div class="menu">
+        <select name="batch" id="">
+          <option value="">Enter Batch</option>
+          <option value="march-2020">march-2020</option>
+          <option value="Aug-2020">Aug-2020</option>
+          <option value="march-2021">march-2021</option>
+          <option value="Aug-2020">Aug-2020</option>
+        </select>
+      </div>
+      <div class="menu">
+        <select name="Alocated" id="">
+          <option value="">Allocated Interviews</option>
+          <%for(let interview of Interview) {%>
+
+            <option value="<%=interview._id%>">
+              <%=interview.name%>
+            </option>
+
+            <%}%>
+        </select>
+      </div>
+      <div class="menu">
+        <button type="submit">SEARCH</button>
+      </div>
+    </form>
+  </div>
+
+
+
+  <table>
+    <tr>
+      <th>NAME</th>
+      <th>COLLEGE</th>
+      <th>STATUS</th>
+      <th>DSA</th>
+      <th>WEB</th>
+      <th>REACT</th>
+      <th>COMPANY</th>
+      <th>RESULT</th>
+      <th>Interview_DATE</th>
+    </tr>
+
+    <%for(let infom of Info){%>
+      <tr>
+        <td>
+          <%=infom.NAME%>
+        </td>
+        <td>
+          <%=infom.COLLEGE%>
+        </td>
+        <td>
+          <%=infom.STATUS%>
+        </td>
+        <td>
+          <%=infom.DSA%>
+        </td>
+        <td>
+          <%=infom.WEB%>
+        </td>
+        <td>
+          <%=infom.REACT%>
+        </td>
+        <td>
+          <%=infom.COMPANY%>
+        </td>
+        <td>
+          <%=infom.RESULT%>
+        </td>
+        <td>
+          <%=infom.I_DATE%>
+        </td>
+      </tr>
+
+      <%}%>
+
+
+
+
+
+  </table>
+
+
+</div>

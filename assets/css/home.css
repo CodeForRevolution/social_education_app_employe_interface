@@ -6,7 +6,14 @@ h1 a{
     color: white;
 }
 
-
+.page{
+  width: 100vw;
+  height: 90vh;
+  background-color: red;
+  background-image: url('/img/one.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 
 

@@ -24,7 +24,7 @@ const studenteSchema=new mongoose.Schema({
     type:String
   },
   total:{
-    type:String
+    type:Number
   },
   dsa:{
     type:String
@@ -34,10 +34,10 @@ const studenteSchema=new mongoose.Schema({
   react:{
     type:String
   },
-  allInterview:[{
-    type:mongoose.Schema.Types.ObjectId,
-    ref:'interview'
-  }],
+  // allInterview:[{
+  //   type:mongoose.Schema.Types.ObjectId,
+  //   ref:'interview'
+  // }],
 
   interview:[  
 {

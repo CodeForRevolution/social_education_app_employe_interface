@@ -7,13 +7,16 @@ button{
 }
 
 .page{
-    background-color: orange;
+background-color: pink;
     height: auto;
     overflow: hidden;
      display: flex;
      flex-direction: column;
 }
-
+ul{
+    margin: 0;
+    padding: 0;
+}
 
 /* creating header */
 .header{
@@ -32,6 +35,12 @@ button{
     padding: 0;
     list-style: none;
 
+}
+#student_logo{
+    width: 5%;
+    font-size: 20px;
+    padding-top: 5px;
+    padding-left: 5px;
 }
 .studentMore li{
 
@@ -84,6 +93,7 @@ align-self: flex-start;
     border-radius: 50%;
     width: 45%;
     height:90%;
+    color: blue;
     border: 1px solid black;
     display: flex;
     flex-direction: row;
@@ -95,186 +105,145 @@ align-self: flex-start;
 
 /* making interview list  */
 
-
-.studentList{
-    background-color:rgb(125, 141, 138);
- width: 100%;
- display: flex;
- flex-direction: column;
- justify-content: flex-start;
- margin-top: 5px;
-
-}
-.student{
+.interviewList{
+    width: 100%;
+    background-color: white;
+    height: 100%;
     display: flex;
-     background-color: white;
-    margin-bottom: 0px ;
-    justify-content: flex-start;
-    width:100%;
     flex-direction: column;
-    height:35px;
-    border-bottom: 1px solid black;
-    padding-top: 2px;
-    padding-bottom: 2px;
-  transition: all 1s ease-in-out;
+    height: auto;
+    margin-top: 5px;
+}
+
+.interview{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+   height: 27px;
+   font-size: 18px;
+  border-top:2px solid black ;
+  border-bottom:2px solid black ;
+  margin-bottom:2px  ;
+  border-radius: 25px;
+  overflow: hidden;
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+.interviewActive{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    background-color: #f2f2f2;
+   font-size: 18px;
+  border-top:2px solid black ;
+  border-bottom:2px solid black ;
+  margin-bottom:2px  ;
+  border-radius: 25px;
+  overflow: hidden;
+  margin-left: 3px;
+  margin-right: 3px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.interviewLess{
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-start;
    
 }
 
 
-.activeStudent{
-    transition: height 1s ease-in-out;
-    transition-duration: 1s;
-    height: auto;
-    background-color: #f2f2f2;
-
- 
+.logo_interview i{
+  font-size: 25px;;
 }
-/* working on student less */
-.studentLess{
+
+#logo_interview{
+    width:3%;
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+}
+
+.interviewLess ul{
     display: flex;
     width: 100%;
     flex-direction: row;
     justify-content: flex-start;
-    margin-top: 5px;
-    justify-content: space-between;
-    font-size:17px;
    
 }
-.studentLess ul{
-    width: 100%;
+
+.interviewLess li{
     display: flex;
-    
-    margin: 0;
-    padding: 0;
-    list-style: none;
+    width:20%;
+    align-items: center;
+
 
 }
-.studentLess li{
-    width: 22%;
-    margin: 0;
-    padding: 0;
-    margin-left: 2px;
+#intervew_date{
+    height: 27px;
+    padding-top: 25px;
+   overflow: hidden;
    
 }
 #more_info_drop{
-    width: 5%;
-    margin-left: auto;
-}
-
-#student_logo{
-    width:5%;
-    margin-bottom: 5px;
-
-}
-.more_info_drop {
-display: flex;
-justify-content: center;
-align-items: center;
-}
-.student_logo i{
-    font-size: 30px;
-}
-
-/* working on student more score */
-
-.studentMore{
+    display: flex;
+    justify-content: flex-end;
  
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: row;
-    width: 100%;
-    justify-content: space-between;
-    margin-top: 5px;
-    justify-content: baseline;
-   
 }
-.student_more_score{
-  display: flex;
-  flex-direction: column;
-  width: 12%;
-  align-items: center;
-
+#more_info_drop i{
+   margin-right: 10px;
 }
 
-.student_more_score ul{
+
+
+/* creatin interview result form  */
+.interviewMore {
     display: flex;
     flex-direction: column;
     width: 100%;
-} 
 
-.student_more_score ul li{
-    width: 100%;
 }
-
-/* working on student interview-given */
-.student_more_given-interview{
-    display: flex;
-    flex-direction: column;
-    width: 35%;
-    align-items: center;
-  }
-  
-  .student_more_given-interview ul{
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-  } 
-  
-  .student_more_given-interview ul li{
-      width: 100%;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-  }
-  .student_more_given-interview span{
-
-display: inline-block;
-width:50%;
-margin-left: 1px;
-  }
-
-  .student_more_given-interview .Result_interview {
-width: 30%;
-  }
-  
-  .student_more_given-interview .date_interview {
-width: 25%;
-  }
-  
-/* working on student interview list available  */
-
-.student_more_interview{
-    display: flex;
-    flex-direction: column;
-    width: 30%;
-    
-    align-items: center;
-  }
-  
-  .student_more_interview ul{
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-  } 
-  
-  .student_more_interview ul li{
-      width: 100%;
-  }
-  
-.student_more_interview button{
-
-    width: 50%;
-    display: flex;
+.interviewMore h5{
     align-self: center;
-    display: block;
     margin-top: 10px;
 }
-.student_more_interview  form{
-    display: flex;
-    flex-direction: column;
+.interviewMore h6{
+    align-self: center;
+    margin-top: 10px;
 }
 
-/* creating student form 0 */
+.interviewMore ul{
+display: flex;
+flex-direction: row;
+margin-top: 5px;
+padding-left: 10px;
+padding-right: 10px;
+border: 2px solid black;
+border: 25px;
+}
+
+.interviewMore form{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.interviewMore li{
+    display: flex;
+    width: 33.3%;
+}
+.interivew_result_form button{
+    width: 30%;
+}
+.interivew_result_form select{
+    width: 60%;
+}
+
+/* creating interview form 0 */
+
 .student_create{
     transition:all ease-in-out;
     display: none;
@@ -327,6 +296,12 @@ cursor: pointer;
 
 
 .student_create button{
+    margin-top: 20px;
+    border-radius: 25px;
+    background-color:     #ff99ff;
+    color: black;
+}
+.nonActive button{
     margin-top: 20px;
     border-radius: 25px;
     background-color:     #ff99ff;

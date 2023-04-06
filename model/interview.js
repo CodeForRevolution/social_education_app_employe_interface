@@ -9,6 +9,14 @@ const intervieweSchema=new mongoose.Schema({
    position:{
     type:String,
    },
+   date:{
+    type:Date,
+    required:true
+   },
+   salary:{
+    type:String,
+    required:true
+   },
    skill:[
      {
      type:String

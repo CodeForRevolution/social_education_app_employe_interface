@@ -4,17 +4,20 @@ header{
     height: 30px;
     background-color: black;
     color: white;
+
 }
 header *{
     margin: 0;
     padding: 0;
 }
+
 header ul{
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: row;
     height: 100%;
+    border: 2px solid black;
   
     
 }
@@ -29,7 +32,69 @@ header li{
 
 }
 header li a{
+    display: inline-block;
     color: white;
  text-decoration: none;
+ width:100% ;
+ height: 100%;
+ font-weight: 600;
     
+}
+.active{
+color: red;
+ background-color: whitesmoke;
+
+}
+
+/* working on more monu on header of left side */
+#more_menu{
+    width: 5%;
+    position: relative;
+
+}
+.more_menu_i{
+  color: white;
+  font-size: 25px;
+  padding-right: 1px;
+
+}
+.slidedown{
+    border: 1px solid black;
+    width: 154px;
+    height: 63px;
+    position: absolute;
+    background-color:whitesmoke;
+    color: black;
+    right: 0px;
+    display: none;
+}
+#username_slidedown{
+   
+}
+#logout_slidedown{
+    width: auto;
+    height: auto;
+    margin-top: 5px;
+ color: black;
+ border: 2px solid black;
+ border-radius: 25px;
+ padding: 2px;
+ background-color: red;
+}
+
+.activeSlide{
+    transition: all 0.5s ease-in-out;
+    border: 1px solid black;
+    width: 154px;
+    height: 63px;
+    position: absolute;
+    background-color:whitesmoke;
+    color: black;
+    right: 0px;
+    display: block;
+    transition: all 0.5s ease-in-out;
+}
+
+html{
+    overflow-y:unset;
 }
