@@ -1,5 +1,5 @@
 table{
-    border: 2px solid red;
+    border: 2px solid black; 
     width: 100vw;
     margin-top: 10px;
 }
@@ -9,14 +9,11 @@ th{
   text-align: center;
 }
 td{
-    border: 1px solid orange;
+    border: 1px solid black;
     text-align: center;
 
 }
-tr{
-    border: 1px solid blue;
 
-}
 
 
 

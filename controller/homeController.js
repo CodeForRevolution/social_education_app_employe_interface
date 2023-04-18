@@ -1,28 +1,17 @@
 
 
-
-
-
 module.exports.singup_page=function(req,res){
   res.render('singup.ejs');
 }
 
 module.exports.homepage=function(req,res){
-  res.redirect('/home');
+  res.redirect('/student/studentList')
 }
 
 module.exports.home= async function(req,res){
-
-res.render('home.ejs');
- 
+res.render('home.ejs'); 
 
 }
-
-
-
-// module.exports.wrong=function(req,res){
-//   res.render('wrong');
-// }
 
 
 

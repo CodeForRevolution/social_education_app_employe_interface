@@ -1,26 +1,3 @@
-// console.log('welcome to interveiwList page')
-
-// const dropEl=document.querySelectorAll('.more_info_drop');
-// for(let i=0;i<dropEl.length;i++){
-//     dropEl[i].addEventListener('click',function(e){
-//         e.preventDefault();
-//         const clickEL=document.getElementById(dropEl[i].getAttribute("href"));
-//         const activeEl=document.getElementsByClassName('interviewActive');
-//         console.log('active',activeEl.id);
-//         console.log("click anchor",dropEl[i].getAttribute("href"));
-        
-//         // console.log("click anchor",activeEl[0].id);
-//         if(activeEl.length!=0){
-//         if(dropEl[i].getAttribute("href")==activeEl[0].id){
-//             console.log('same is click');
-//         }
-//     }
-//         clickEL.classList.add('interviewActive');
-//         clickEL.classList.remove('interview');
-//     })
-
-// }
-
 
 
 

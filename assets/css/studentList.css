@@ -13,7 +13,9 @@ button{
      display: flex;
      flex-direction: column;
 }
-
+a{
+    text-decoration: none;
+}
 
 /* creating header */
 .header{
@@ -117,19 +119,39 @@ align-self: flex-start;
     border-bottom: 1px solid black;
     padding-top: 2px;
     padding-bottom: 2px;
-  transition: all 1s ease-in-out;
+ 
    
 }
 
 
+
+
+
 .activeStudent{
-    transition: height 1s ease-in-out;
-    transition-duration: 1s;
     height: auto;
     background-color: #f2f2f2;
-
+    animation: increase-height 0.5s ease-in-out forwards;
  
 }
+/* 
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: #3498db;
+    animation: expand-shrink 5s ease-in-out infinite;
+  } */
+  
+  @keyframes  increase-height{
+    0% {
+     
+      max-height: 20px;
+    }
+  
+    100% {
+  
+        max-height: 350px;
+    }
+  }
 /* working on student less */
 .studentLess{
     display: flex;

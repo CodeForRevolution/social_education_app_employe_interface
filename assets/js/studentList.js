@@ -15,7 +15,7 @@ if(findropEl.length!=0){
     console.log('inside',findropEl[0].id);
     console.log('active',studentEL.id);
     findropEl[0].classList.add('student');
-    findropEl[0].classList.remove('activeStudent')
+    findropEl[0].classList.remove('activeStudent')      
     if(findropEl[0].id==studentEL.id){
 console.log('if statement');
         return;

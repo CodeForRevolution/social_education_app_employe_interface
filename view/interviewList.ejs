@@ -56,8 +56,7 @@
                             package: <%=interview.salary%>
                         </li>
 
-                        <li id="more_info_drop"><a class="more_info_drop" href="<%=interview._id%>"><i
-                                    class="fa-solid fa-retweet"></i></a></li>
+                        <li id="more_info_drop"><a class="more_info_drop" href="<%=interview._id%>"><i class="fa-solid fa-caret-down"></i></a></li>
 
                     </ul>
                 </div>
@@ -114,27 +113,27 @@
 
     <form action="/interview/create" method="post">
     <div class="student_form_fields">
-      Company:
+    <span>  Company:</span>
         <input type="text" name="name" id="" required>
     </div>
 
     <div class="student_form_fields">
-        Email:
+       <span> Email:</span>
      <input type="text" name="email" id="" required>  
     </div>
 
     <div class="student_form_fields">
-        position:
+      <span>  position:</span>
         <input type="text" name="position" id=""  required>
     </div>
     <div class="student_form_fields">
-        Salary:
-        <input type="text" name="salary" id=""  required>
+      <span>  Salary:</span>
+       <input type="text" name="salary" id=""  required>
     </div>
 
    
     <div class="student_form_fields">
-      Date 
+    <span>  Date </span>
         <input type="date" name="date" id=""  required>
     </div>
 
