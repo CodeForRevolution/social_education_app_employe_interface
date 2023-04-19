@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express =require('express');
 const cookieParser=require('cookie-parser');
 const flash=require('connect-flash');
@@ -22,7 +23,7 @@ App.set('view engine','ejs');
 App.set('views','view');
 App.use(session({
     name:'first-skill-test',
-    secret: 'blahsomething',
+    secret: process.env.SECRET_KEY_SESSION,
     saveUninitialized:false,  //change in deployement
     resave:false,
     cookie:{
