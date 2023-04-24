@@ -34,9 +34,8 @@ module.exports.interviewList = async function (req, res) {
     if (search.name != undefined || search.position != undefined) {
         //sending the filtered  data to the page interviewList.ejs
         let interview = await Interview.find(search).populate('student');
-        let Allinterview = await Interview.find({}).populate('student');
-
-        let student = await Student.find(
+        let Allinterview = await Interview.find({}).populate('student'); 
+       let student = await Student.find(
             search
         ).populate({
             path: 'interview',
@@ -46,6 +45,10 @@ module.exports.interviewList = async function (req, res) {
 
 
         })
+
+        
+
+    
         res.render('interviewList.ejs', {
             Student: student,
             Interview: interview,

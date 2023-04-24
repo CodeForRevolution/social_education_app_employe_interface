@@ -63,6 +63,7 @@
       <th>DSA</th>
       <th>WEB</th>
       <th>REACT</th>
+      <th>BATCH</th>
       <th>COMPANY</th>
       <th>RESULT</th>
       <th>Interview_DATE</th>
@@ -89,13 +90,16 @@
           <%=infom.REACT%>
         </td>
         <td>
+          <%=infom.BATCH%>
+        </td>
+        <td>
           <%=infom.COMPANY%>
         </td>
         <td>
           <%=infom.RESULT%>
         </td>
         <td>
-          <%=infom.I_DATE%>
+          <%=infom.I_DATE.toString().substring(0, 15)%>
         </td>
       </tr>
 

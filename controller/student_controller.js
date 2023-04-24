@@ -136,6 +136,7 @@ module.exports.studentCsv = async function (req, res) {
         DSA: student_.dsa,
         WEB: student_.WEBDEV,
         REACT: student_.react,
+        BATCH: student_.batch,
         COMPANY: student_.interview[i].document.name,
         RESULT: student_.interview[i].value,
         I_DATE: student_.interview[i].document.createdAt

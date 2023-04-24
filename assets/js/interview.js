@@ -6,6 +6,8 @@ console.log("dropEl lllls ",dropEL);
 
 for(let i=0;i<dropEL.length;i++){
     dropEL[i].addEventListener('click',function(e){
+
+   console.log('you called me pro to prevent ');     
 e.preventDefault();
 console.log(e.target);
 

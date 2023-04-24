@@ -11,6 +11,9 @@ header *{
     padding: 0;
 }
 
+body{
+    font-size: 13px;
+}
 header ul{
     margin: 0;
     padding: 0;
@@ -27,9 +30,8 @@ header li{
     width: 33%;
     height: 100%;
     text-align:center;
-   /* padding-left: 40px;
-   padding-right: 40px; */
-
+   justify-content: center;
+ 
 }
 header li a{
     display: inline-block;
@@ -98,3 +100,9 @@ color: red;
 html{
     overflow-y:unset;
 }
+.clicked {
+    /* Define the click effect styles */
+    color: red;
+    opacity: 0.7;
+
+  }

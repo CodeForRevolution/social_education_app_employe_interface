@@ -50,7 +50,7 @@
                             Position <%=interview.position%>
                         </li>
                         <li id="intervew_date">
-                            Date: <%=interview.date%>
+                            Date: <%=interview.date.toString().substring(0, 15)%>
                         </li>
                         <li>
                             package: <%=interview.salary%>
@@ -85,7 +85,7 @@
                              <option value="onHold">onHold</option>
                              <option value="Didn’t Attempt">Didn't Attempt</option>
                             </select>
-                            <button type="submit">submit </button>
+                            <button type="submit">send</button>
                              </form>
                 </li>
             </ul>

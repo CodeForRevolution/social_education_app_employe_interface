@@ -128,6 +128,7 @@ align-self: flex-start;
   overflow: hidden;
   margin-left: 3px;
   margin-right: 3px;
+  padding-left: 3px;
 }
 
 .interviewActive{
@@ -139,7 +140,7 @@ align-self: flex-start;
   border-top:2px solid black ;
   border-bottom:2px solid black ;
   margin-bottom:2px  ;
-  border-radius: 25px;
+
   overflow: hidden;
   margin-left: 3px;
   margin-right: 3px;
@@ -165,6 +166,7 @@ align-self: flex-start;
     display: flex;
     flex-direction: row;
     justify-content:flex-start;
+    align-content: baseline;
    
 }
 
@@ -193,12 +195,13 @@ align-self: flex-start;
     width:20%;
     align-items: center;
 
-
 }
 #intervew_date{
-    height: 27px;
-    padding-top: 25px;
-   overflow: hidden;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+
    
 }
 #more_info_drop{
