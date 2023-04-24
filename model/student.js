@@ -42,10 +42,7 @@ const studenteSchema=new mongoose.Schema({
   interview:[  
 {
 
-     
-       
-
-        value:{
+  value:{
           type:String,
          enum:['pass','fail','onHold','Didn’t Attempt'],
          default:'onHold'

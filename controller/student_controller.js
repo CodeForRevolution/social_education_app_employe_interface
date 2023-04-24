@@ -19,84 +19,108 @@ module.exports.newstudent = async function (req, res) {
 
 module.exports.studentList = async function (req, res) {
 
- try {
 
-  let interview = await Interview.find({}).populate('student');
-  var search = new Object;//making object for search the filter document
-  if (req.query.name != undefined && req.query.name != '') {//putting the fields into search object on which filtering will done
-    search.name = req.query.name
-  }
-  if (req.query.batch != undefined && req.query.batch != '') {
-    search.batch = req.query.batch;
-  }
-  if (req.query.status != undefined && req.query.status != '') {
-    search.status = req.query.status;
-  };
+try {
 
-  if (req.query.name != undefined || req.query.batch != undefined) {//checking whether the request is for sorted data or for whole data
-    if (search.name) {
-      delete search.name;
-      let student = await Student.find(
-        { name: { $regex: '.*' + req.query.name + '.*', $options: 'i' } },
-        search//finding the desire sorted document by using the search object 
-      ).populate({
-        path: 'interview',
-        populate: {
-          path: 'document'
-        },
-      })
-      res.render('studentList.ejs', {
-        Student: student,
-        Interview: interview
-      });
-    }
   
+  let interview = await Interview.find({}).populate('student');
+  var student = await Student.find(
+    
+        ).populate({
+          path: 'interview',
+          populate: {
+            path: 'document'
+    
+          },
+        })
 
-    let student = await Student.find(
-      search
-    ).populate({
-      path: 'interview',
-      populate: {
-        path: 'document'
-
-      },
+if(req.query.name!=undefined&& req.query.name!='')
+{
+  console.log('you hit the search name')
+    var filter = student.filter(function (a) {
+      if (a.name.toLowerCase().includes(req.query.name.toLowerCase())) {  //filtering the student as per name
+        return a;
+      }
     })
- res.render('studentList.ejs', {
-      Student: student,
-      Interview: interview
-    });
+
+    console.log('your fileter element was',filter);
+    student=filter;
+}
 
 
 
 
-  } else {
-
-
-    let student = await Student.find({   //if the request will not for sorted data and this part will run and will send all the data of student to view
-    }
-    ).populate({
-      path: 'interview',
-      populate: {
-        path: 'document'
-
-      },
-
-
+if(req.query.status!=undefined&& req.query.status!='')
+{
+  console.log('you hit the search status',req.query.status)
+    var filter = student.filter(function (a) {
+      if (a.status===req.query.status) { //filtering the student as per status 
+        
+        return a;
+      }
     })
+    console.log('your fileter element was',filter);
+
+    student=filter;
+}
+
+
+
+if(req.query.batch!=undefined&& req.query.batch!='')
+{
+
+  console.log('you hit the search status',req.query.batch)
+    var filter = student.filter(function (a) {
+      if (a.batch===req.query.batch) {             //filtering the student as per batch 
+        
+        return a;
+      }
+    })
+
+    console.log('your fileter element was',filter);
+
+    student=filter;
+}
+
+
+
+
+if(req.query.interview!=undefined&& req.query.interview!='')
+{
+
+
+  console.log('you are sending the student to interview is',student)
+  console.log('you hit the search interview',req.query.interview)
+    var filter = student.filter(function (a) {
+      for(let i=0;i<a.interview.length;i++){
+        if (a.interview[i].document.name===req.query.interview) {    
+             return a;                                                   //filtering the student as per alocated
+        }      
+      }   
+    }) 
+
+    console.log('your fileter element was',filter);
+
+    student=filter;
+}
+
+
+
+
+
+
    res.render('studentList.ejs', {
       Student: student,
       Interview: interview
     });
 
-  }
-
   
- } catch (error) {
-  console.log('error from try catch',error)
-  res.redirect('back')
-  
- }
+} catch (error) {
 
+  res.flash('error','error in filtering data');
+  res.redirect('back');
+  
+}
 
 
 
@@ -122,6 +146,19 @@ module.exports.studentCsv = async function (req, res) {
 
 
   })
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   for (let student_ of student) {
 
@@ -157,6 +194,7 @@ module.exports.studentCsv = async function (req, res) {
         DSA: student_.dsa,
         WEB: student_.WEBDEV,
         REACT: student_.react,
+        BATCH: student_.batch,
         COMPANY: 'Not allocated',
         RESULT: 'NaN',
         I_DATE: 'NaN'
@@ -275,6 +313,7 @@ module.exports.downloadCsv = async function (req, res) {
         DSA: student_.dsa,
         WEB: student_.WEBDEV,
         REACT: student_.react,
+        BATCH: student_.batch,
         COMPANY: student_.interview[i].document.name,
         RESULT: student_.interview[i].value,
         I_DATE: student_.interview[i].document.createdAt
@@ -289,6 +328,7 @@ module.exports.downloadCsv = async function (req, res) {
         DSA: student_.dsa,
         WEB: student_.WEBDEV,
         REACT: student_.react,
+        BATCH: student_.batch,
         COMPANY: 'Not allocated',
         RESULT: 'NaN',
         I_DATE: 'NaN'
@@ -304,3 +344,4 @@ module.exports.downloadCsv = async function (req, res) {
 
 
 }
+ 

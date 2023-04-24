@@ -29,11 +29,11 @@
                             </select>
             </div>
             <div class="menu">
-                <select name="Alocated" id="">
+                <select name="interview" id="">
                     <option value="">Allocated Interviews</option>
                     <%for(let interview of Interview) {%>
 
-                        <option value="<%=interview._id%>">
+                        <option value="<%=interview.name%>">
                             <%=interview.name%>
                         </option>
 
@@ -48,13 +48,16 @@
 
 
     <div class="studentList">
+        <%if(Student.length==0){%>
+<h4 style="text-align: center;">NO such student exist</h4>
+            <%}%>
         <%for(let student of Student) {%>
             <div class="student" id="<%=student._id%>">
                 <div class="studentLess">
 
                     <ul>
                         <li class="student_logo" id="student_logo"><i class="fa-solid fa-user-graduate"></i></li>
-                        <li><%=student.name.replace('""',"")%>
+                        <li><%=student.name%>
                         </li>
                         <li>College:<%=student.college%>
                         </li>
