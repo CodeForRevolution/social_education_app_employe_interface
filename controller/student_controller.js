@@ -345,3 +345,18 @@ module.exports.downloadCsv = async function (req, res) {
 
 }
  
+
+module.exports.delete=async function(req,res){
+try {
+
+  console.log('you hit delete',req.params);
+  let student= await Student.deleteOne({_id:req.params.id})
+  res.redirect('back');
+  
+} catch (error) {
+  
+  console.log(error);
+  res.redirect('back');
+  
+}
+}

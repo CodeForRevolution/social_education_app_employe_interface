@@ -5,6 +5,9 @@ button{
     background-color:  #ffe6ff;
     color: black;
 }
+.delete_student{
+    color: red;
+}
 
 .page{
     background-color: orange;
@@ -24,7 +27,8 @@ a{
     height: 70px;
     flex-direction: row;
     background-color: whitesmoke;
-    margin-top: 0px;
+   
+   
     
 }
 .studentMore ul{
@@ -42,6 +46,7 @@ a{
     padding: 0;
    
 }
+
 
 .header form{
     display: flex;

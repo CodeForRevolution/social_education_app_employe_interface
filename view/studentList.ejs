@@ -82,7 +82,12 @@
                             </li>
                             <li>React:<%=student.react%>
                             </li>
+                            <li>
+                                <a  class="delete_student" href="/student/delete/<%=student._id%>">Delete student</a>
+                            </li>
+                          
                         </ul>
+
                     </div>
 
 
@@ -157,7 +162,7 @@
     <form action="/student/newstudent" method="post">
     <div class="student_form_fields">
         Name:
-        <input type="text" name="name" id="" required>
+        <input type="text" name="name" id="" required autofocus="true">
     </div>
 
     <div class="student_form_fields">
@@ -186,7 +191,7 @@
     </div>
 
     <div class="student_form_fields">
-        <select name="batch" id="">
+        <select name="batch" id="" required>
 <option value="">Enter Batch</option>
 <option value="march-2020">march-2020</option>
 <option value="Aug-2020">Aug-2020</option>

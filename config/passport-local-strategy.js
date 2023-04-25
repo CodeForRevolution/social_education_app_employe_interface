@@ -11,7 +11,7 @@ passport.use(new localStrategy({
             let employe = await Employee.findOne({ email: email });
             if (employe && employe.password == password) {
                 console.log('sending the employe to the authentication next ')
-             req.flash('success','LOG-IN successfully')
+                req.flash('success','LOG-in sucessfully')
                 return done(null, employe);
 
             } else {
@@ -35,7 +35,9 @@ passport.serializeUser(function (employe, done) {
 passport.deserializeUser(async function (id, done) {
     let employe = await Employee.findById(id);
     if (employe) {
+     
         return done(null, employe);
+      
     } else {
         return done(err);
     }

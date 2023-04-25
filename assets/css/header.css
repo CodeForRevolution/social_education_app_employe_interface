@@ -1,9 +1,16 @@
+body{
+    font-size: 13px;
+    position: relative;
+}
+
+
 header{
     display: block;
     width: 100vw;
     height: 30px;
     background-color: black;
     color: white;
+ 
 
 }
 header *{
@@ -11,9 +18,7 @@ header *{
     padding: 0;
 }
 
-body{
-    font-size: 13px;
-}
+
 header ul{
     margin: 0;
     padding: 0;

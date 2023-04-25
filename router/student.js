@@ -7,6 +7,7 @@ route.post('/newstudent',student_controller.newstudent)
 route.post('/allocateInterview',passport.checkAuthentication,student_controller.alocateInterveiw);
 route.post('/result',passport.checkAuthentication,student_controller.result);
 route.get('/studentList',passport.checkAuthentication,student_controller.studentList);
+route.get('/delete/:id',passport.checkAuthentication,student_controller.delete);
 route.get('/studentCsv',passport.checkAuthentication,student_controller.studentCsv);
 route.get('/downwloadcsv',passport.checkAuthentication,student_controller.downloadCsv);
 module.exports=route;
